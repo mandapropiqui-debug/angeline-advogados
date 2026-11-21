@@ -219,7 +219,7 @@ const vh=()=>window.innerHeight;
 let siteOn=false;
 
 /* folhas empilhadas */
-function setTops(){secs.forEach(s=>{s.style.top=Math.min(0,vh()-s.offsetHeight)+'px'})}
+function setTops(){}
 document.documentElement.classList.add('stack');
 setTops();
 addEventListener('resize',setTops);addEventListener('load',setTops);
@@ -245,19 +245,7 @@ function onScroll(){
   if(ticking)return;ticking=true;
   requestAnimationFrame(()=>{
     ticking=false;const V=vh();let cur=secs[0];
-    secs.forEach((s,i)=>{
-      const r=s.getBoundingClientRect();
-      if(r.top<=V*.5)cur=s;
-      const n=secs[i+1];
-      if(!n){return}
-      const nt=n.getBoundingClientRect().top;
-      const p=clamp(1-nt/V,0,1);
-      if(p>0&&r.bottom>0){
-        s.style.setProperty('--dim',(p*.62).toFixed(3));
-        if(!reduce){s.style.transformOrigin='50% '+(V*.5-r.top).toFixed(0)+'px';s.style.transform='scale('+(1-.06*p).toFixed(4)+')'}
-        s._lift=true;
-      }else if(s._lift){s.style.setProperty('--dim',0);s.style.transform='';s._lift=false}
-    });
+    secs.forEach(s=>{if(s.getBoundingClientRect().top<=V*.5)cur=s});
     setActive(cur.dataset.m);
     
     /* trilho duplo */

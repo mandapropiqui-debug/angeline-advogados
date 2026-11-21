@@ -30,7 +30,9 @@ button{font:inherit;color:inherit}
 
 /* ---------- FOLHAS EMPILHADAS (transicao de paginas) ---------- */
 .sec{position:relative;overflow:hidden;overflow:clip;isolation:isolate;padding:92px 20px 72px;min-height:100svh;border-radius:var(--r) var(--r) 0 0;transform-origin:50% 40%}
-.stack .sec{position:sticky;top:0}
+.stack .sec{position:relative;top:auto!important;margin-top:calc(var(--r) * -1);padding-top:calc(92px + var(--r))}
+.stack .sec#links{margin-top:0;padding-top:92px}
+.sec::after{display:none!important}
 #links{border-radius:0}
 .sec.dark{background:linear-gradient(135deg,var(--g1),var(--g3) 35%,var(--g2) 65%,var(--g1));background-size:300% 300%;animation:gshift 16s ease-in-out infinite alternate;color:var(--w)}
 .sec.light{background:var(--l);color:var(--g1)}
