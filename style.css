@@ -466,3 +466,163 @@ html.lbo{overflow:hidden}
 .vals li:nth-child(2){animation-delay:.07s}.vals li:nth-child(3){animation-delay:.14s}.vals li:nth-child(4){animation-delay:.21s}.vals li:nth-child(5){animation-delay:.28s}.vals li:nth-child(6){animation-delay:.35s}
 .vals b{display:block;font:600 16px/1.2 Figtree,sans-serif;margin-bottom:2px}
 .vals span{display:block;font-size:15px;line-height:1.38;opacity:.8}
+
+.dsk{display:none}
+/* =========================================================
+   DESKTOP INSTITUCIONAL (>= 1024px)
+   ========================================================= */
+@media (min-width:1024px){
+:root{--px:max(56px,calc((100vw - 1200px)/2))}
+body{max-width:none}
+main{display:flex;flex-direction:column}
+#links{order:0}#galeria{order:1}#causa{order:2}#tempo{order:3}#raiox{order:4}#areas{order:5}#socios{order:6}#trilho{order:7}#duvidas{order:8}#principios{order:9}#contato{order:10}
+.stack .sec,.sec{padding:124px var(--px) 104px;min-height:0}
+.stack .sec{padding-top:calc(124px + var(--r))}
+.stack .sec#links{padding-top:0;min-height:100svh}
+.sec{border-radius:48px 48px 0 0}
+#links{border-radius:0}
+.h2{font-size:clamp(44px,4.2vw,66px);margin-bottom:14px}
+.lede{font-size:19px;max-width:54ch;margin-bottom:34px}
+.src{max-width:70ch}
+.menu{width:min(calc(100vw - 48px),580px);top:20px;left:var(--px);transform:translate(0,-24px)}
+.entered .menu{transform:none}
+.menu a{font-size:12px;padding:9px 0 8px}
+.menu .ic{width:22px;height:22px}
+.menu li:nth-child(1){order:1}.menu li:nth-child(6){order:2}.menu li:nth-child(2){order:3}.menu li:nth-child(3){order:4}.menu li:nth-child(4){order:5}.menu li:nth-child(5){order:6}.menu li:nth-child(7){order:7}
+.menu ul{display:flex}
+
+/* ---- primeira pagina: os dois + o que fazem ---- */
+#links{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);grid-template-rows:auto auto auto auto auto 1fr;column-gap:48px;align-content:stretch}
+#links .clg{grid-column:1;grid-row:1;width:230px;margin:112px 0 0;justify-self:start}
+#links .hlab{display:none}
+#links .h2.tight{grid-column:1;grid-row:2;margin:34px 0 18px;font-size:clamp(50px,5.4vw,92px);line-height:1}
+#links .hsub{display:block;grid-column:1;grid-row:3;margin:0 0 30px;font-size:20px;max-width:30ch;opacity:.82}
+#links .hlab2{display:block;grid-column:1;grid-row:4;margin:0 0 12px;font:600 13px Figtree;letter-spacing:.04em;opacity:.7}
+#links .chips{grid-column:1;grid-row:5;gap:10px;max-width:640px;align-content:flex-start}
+#links .chip{font-size:16px;padding:11px 20px;background:rgba(255,255,255,.13);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+#links .hcue{display:inline-flex;grid-column:1;grid-row:6;align-self:start;margin-top:34px;gap:10px;align-items:center;color:#fff;text-decoration:none;font:600 16px Figtree;opacity:.85;padding:12px 0}
+#links .hcue .ic{width:20px;height:20px;animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{50%{transform:translateY(5px)}}
+#links .links{display:none}
+#links .duo{grid-column:2;grid-row:1/-1;align-self:end;margin:0;height:min(92svh,980px);min-height:620px;justify-self:center;aspect-ratio:760/992;width:auto;overflow:hidden}
+#links .duo img{object-fit:contain;object-position:50% 100%}
+#links .duo .halo{width:135%;top:46%}
+#links .duo{overflow:visible}
+.open{left:0;width:100%;transform:none}
+.seal{bottom:96px!important}
+.hp-a{width:68%!important;left:auto!important;right:-6%;top:-8%!important}
+.hpat{height:100svh}
+
+/* ---- trouxe aqui: pilares e quiz lado a lado ---- */
+#causa{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);column-gap:72px;align-items:start}
+#causa .h2,#causa .lede,#causa .rstage{grid-column:1}
+#causa .rstage{margin-top:26px}
+#causa .quiz{grid-column:2;grid-row:1/span 3;margin:0;min-height:600px}
+#causa .src{grid-column:1/-1;margin-top:26px}
+
+/* ---- tempo ---- */
+.tls{margin:10px 0 0;overflow:visible}
+.tlh{width:auto;padding:38px 0 8px;gap:16px}
+.tlh::before{left:0;right:0}
+.tlh::after{left:0}
+.tc{flex:1 1 0;min-height:230px;padding:24px 20px;opacity:.38}
+.tc small{font-size:42px}
+.tc b{font-size:18px}
+.tc span{font-size:16px}
+.tlbar{max-width:none}
+
+/* ---- raio-x ---- */
+#raiox{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);column-gap:72px;align-items:start}
+#raiox>*{grid-column:1}
+#raiox .doc{grid-column:2;grid-row:1/span 6;margin:0}
+#raiox .src{grid-column:1/-1}
+
+/* ---- areas ---- */
+.drum{margin:0 calc(var(--px) * -1)}
+.ring{padding:0 calc(50% - 125px)}
+.afile{max-width:860px;margin:6px auto 0}
+.dctl{justify-content:center}
+
+/* ---- socios ---- */
+#socios .badges{grid-template-columns:1fr 1fr;gap:40px;max-width:980px;margin:0 auto}
+#socios .badge{height:min(640px,78svh)}
+#socios .h2,#socios .lede,#socios .shared{text-align:center;margin-left:auto;margin-right:auto}
+#socios .shared{margin-top:30px}
+
+/* ---- trilho ---- */
+#trilho .tl{max-width:900px;margin:18px auto 0}
+#trilho .h2{text-align:center}
+
+/* ---- duvidas / principios ---- */
+#duvidas .h2,#duvidas .lede,#principios .h2,#principios .lede,#galeria .h2,#galeria .lede{text-align:center;margin-left:auto;margin-right:auto}
+#duvidas .chat,#duvidas .cq{max-width:820px;margin-left:auto;margin-right:auto}
+#duvidas .chat{margin-top:18px}
+#principios .ptabs{max-width:820px;margin:0 auto 20px}
+#principios .ppan{max-width:820px;margin:0 auto}
+#principios .pp .big{font-size:36px}
+#principios .vals{grid-template-columns:1fr 1fr;gap:12px}
+
+/* ---- galeria ---- */
+.gal{margin:14px calc(var(--px) * -1) 0}
+#galeria .cnt{text-align:center}
+.gctl{justify-content:center}
+
+/* ---- ajustes finos desktop ---- */
+.gi{width:270px;height:420px;border-radius:30px}
+.gi.hl{width:310px;height:480px}
+.gi.wide{width:520px;height:440px}
+.gtrack{gap:18px}
+.gt{font-size:15px;left:14px;bottom:14px;padding:8px 16px 8px 11px}
+.lb{left:0;width:100%;translate:none}
+.lbf{inset:70px 90px 30px}
+.lbf figcaption{font-size:18px;max-width:60ch}
+#trilho .tl{max-width:960px;padding-left:56px}
+.ev{margin-bottom:34px}
+.ev b{font-size:24px}
+.ev span{font-size:18px;max-width:60ch}
+.ev em{font-size:13px}
+.cbody{height:400px;padding:22px 20px}
+#duvidas .chat{font-size:17px}
+#duvidas .cq button,#duvidas .cq a{font-size:16px;padding:14px 18px}
+.ptabs button{font-size:15px;padding:15px 6px}
+#principios .pp p{font-size:19px}
+#principios .vals b{font-size:18px}
+#principios .vals span{font-size:16px}
+.afile{font-size:17px}
+.fold{width:300px}
+/* ---- ajustes 2 ---- */
+#links{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);min-height:max(100svh,860px)}
+#links .hsub{max-width:46ch}
+#links .duo{height:min(112svh,1120px);min-height:820px;padding-top:104px;box-sizing:border-box;align-self:end}
+#links .duo img{height:100%}
+#links .duo .halo{width:150%}
+.who{display:flex;position:absolute;top:0;z-index:3;flex-direction:column;align-items:flex-start;gap:1px;padding:10px 20px 10px 16px;border-radius:18px;background:rgba(255,255,255,.18);-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);color:#fff;text-align:left;opacity:0;white-space:nowrap}
+.who small{font:500 12.5px Figtree;opacity:.8}
+.who b{font:600 20px/1.15 Outfit,sans-serif}
+.who.wl{left:calc(27% - 100px);top:26px}
+.who.wr{left:calc(67% - 78px);top:26px}
+.who.go{animation:whoin .9s cubic-bezier(.2,.85,.25,1) both,whofloat 5s ease-in-out 1s infinite alternate}
+@keyframes whoin{from{opacity:0;transform:translateY(-18px) scale(.9);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+@keyframes whofloat{to{transform:translateY(-6px)}}
+.seal{padding:18px 30px 18px 20px!important;gap:18px!important;border-radius:26px!important;bottom:15%!important;max-width:none!important}
+.seal .ic{width:46px!important;height:46px!important}
+.seal small{font-size:15px!important}
+.seal b{font-size:24px!important;line-height:1.12!important}
+.hp path{stroke-opacity:.14!important;stroke-width:1.8}
+@keyframes hpdraw{0%{stroke-dashoffset:1;fill-opacity:0;stroke-opacity:.14}42%{stroke-dashoffset:0;fill-opacity:0}58%{fill-opacity:.045;stroke-opacity:.14}82%{fill-opacity:.045;stroke-opacity:.14;stroke-dashoffset:0}100%{stroke-dashoffset:-1;fill-opacity:0;stroke-opacity:.14}}
+/* ---- contato ---- */
+#contato{display:block;text-align:center}
+#contato .clg{width:240px;margin:0 auto 20px;display:block}
+#contato .h2{text-align:center}
+#contato .links{grid-template-columns:1fr 1fr;max-width:980px;gap:14px;margin-left:auto;margin-right:auto;text-align:left}
+#contato .src{margin-left:auto;margin-right:auto}
+#contato .links .pair{grid-column:1/-1}
+#contato .links>a:nth-child(4){grid-column:1/-1}
+}
+/* ---- ajustes 3: etiquetas na altura dos ombros, dupla mais à direita, selo mais alto ---- */
+@media (min-width:1024px){
+#links .duo{translate:44px 0}
+.who.wl{left:7%!important;top:39.5%!important}
+.who.wr{left:71%!important;top:37%!important}
+.seal{bottom:27%!important}
+}
