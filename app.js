@@ -513,7 +513,10 @@ const GAL=[
  {s:'g06',alt:'Os dois sócios lado a lado',pos:'50% 30%'},
  {s:'g04',alt:'Retrato de João Angeline Júnior de braços cruzados',pos:'50% 18%'},
  {s:'g07',alt:'Os dois sócios em um corredor',pos:'50% 25%'},
- {s:'g08',alt:'Os dois sócios sentados em um sofá',pos:'50% 35%'}];
+ {s:'g08',alt:'Os dois sócios sentados em um sofá',pos:'50% 35%'},
+ {s:'e01',alt:'Corredor do escritório com paredes de vidro fosco e piso de madeira',pos:'50% 50%'},
+ {s:'e02',alt:'Recepção do escritório com poltronas, mesa de centro e janela para o jardim',pos:'50% 55%',wide:1},
+ {s:'e03',alt:'Sala de espera do escritório com poltronas claras e vista para jardim interno',pos:'50% 55%',wide:1}];
 (function galeria(){
   const gal=$('#gal'),track=$('#gtrack');
   const mk=(g,i,dup)=>{
