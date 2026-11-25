@@ -626,3 +626,18 @@ main{display:flex;flex-direction:column}
 .who.wr{left:71%!important;top:37%!important}
 .seal{bottom:27%!important}
 }
+
+/* ---- ajustes 4 ---- */
+@media (min-width:1024px){
+.who.wl{top:47%!important}
+.who.wr{top:44.5%!important}
+}
+@media (min-width:1024px){
+#duvidas .cqb{color:#fff;background:rgba(255,255,255,.12)}
+#duvidas .cqb:hover{background:rgba(255,255,255,.2)}
+}
+@media (min-width:1024px){
+#links:not(.hgo) :is(.h2,.hsub,.hlab2,.chips,.hcue,.duo img){opacity:0}
+}
+/* ajustes 5: João Júnior mais alto no cartão */
+.front img[src$="joao.webp"]{transform:translateX(-5%) scale(1.1);transform-origin:50% 100%}

@@ -286,7 +286,7 @@ const WHO={J:{n:'João Angeline Júnior',s:'João Angeline',img:'assets/joao.web
 const QZ=[
  {k:'assunto',q:['O que','te trouxe aqui?'],h:'Escolha o que mais se parece com o seu caso.',o:[
   {l:'Licitação ou contratação pública',w:'J',a:'Licitações e contratações públicas'},
-  {l:'Terceiro setor ou tributos',w:'J',a:'Terceiro setor ou tributário'},
+  {l:'Terceiro setor',w:'J',a:'Terceiro setor'},
   {l:'Meu negócio ou contrato',w:'R',a:'Empresarial e civil'},
   {l:'Consumo, trabalho ou criminal',w:'R',a:'Consumidor, trabalhista ou criminal'},
   {l:'Outro assunto',w:'R',a:'Outro assunto'}]},
@@ -632,8 +632,8 @@ const GAL=[
 
 /* ---------- entrada do inicio: logo se monta, dupla sobe, logo grande passa atras ---------- */
 function heroIntro(){
-  const sec=$('#links'),img=$('.clg',sec),duo=$('.duo',sec);if(!img||!duo||reduce){const s0=$('#seal');if(s0)s0.classList.add('go');return}
-  const dimg=$('img',duo),seal=$('#seal'),ez='cubic-bezier(.2,.85,.25,1)';const K=matchMedia('(min-width:1024px)').matches?1.6:1;
+  const sec=$('#links'),img=$('.clg',sec),duo=$('.duo',sec);sec.classList.add('hgo');if(!img||!duo||reduce){const s0=$('#seal');if(s0)s0.classList.add('go');return}
+  const dimg=$('img',duo),seal=$('#seal'),ez='cubic-bezier(.2,.85,.25,1)';const DSK=matchMedia('(min-width:1024px)').matches;const K=DSK?.42:1;
   const NS='http://www.w3.org/2000/svg';
   const pat=document.createElement('div');pat.className='hpat';pat.setAttribute('aria-hidden','true');
   [['a',0]].forEach(([k,dl])=>{
@@ -658,8 +658,15 @@ function heroIntro(){
   wrap.appendChild(lsv);sec.appendChild(wrap);
   setTimeout(()=>{img.style.transition='opacity .6s';img.style.opacity='';lsv.style.transition='opacity .6s';lsv.style.opacity='0'},3900*K);
   setTimeout(()=>{wrap.remove();img.style.transition=''},4600*K);
-  const upd=2500;
-  dimg.animate([{opacity:0,transform:'scale(1)',filter:'blur(16px)'},{opacity:1,transform:'scale(1)',filter:'blur(0)'}],{duration:1500,delay:upd,easing:ez,fill:'both'}).onfinish=function(){this.cancel();dimg.style.opacity='';dimg.classList.add('zoom');if(seal)seal.classList.add('go');$$('.who',duo).forEach((w,i)=>setTimeout(()=>w.classList.add('go'),300+i*450))};
+  if(matchMedia('(min-width:1024px)').matches){
+    const bi=(el,d,y)=>{if(!el)return;el.animate([{opacity:0,transform:'translateY('+(y||22)+'px)',filter:'blur(12px)'},{opacity:1,transform:'none',filter:'blur(0)'}],{duration:800,delay:d,easing:ez,fill:'backwards'})};
+    let wi=0;$$('.h2 > span',sec).forEach(s=>{const ws=s.textContent.trim().split(/\s+/);s.textContent='';ws.forEach((w,k)=>{const q=document.createElement('span');q.textContent=w;q.style.display='inline-block';s.appendChild(q);if(k<ws.length-1)s.appendChild(document.createTextNode(' '));bi(q,80+wi*80,22);wi++})});
+    bi($('.hsub',sec),650);bi($('.hlab2',sec),800,14);
+    $$('.chip',sec).forEach((c,i)=>bi(c,850+i*60,16));
+    bi($('.hcue',sec),1250,14);
+  }
+  const upd=DSK?300:2500;
+  dimg.animate([{opacity:0,transform:'scale(1)',filter:'blur(16px)'},{opacity:1,transform:'scale(1)',filter:'blur(0)'}],{duration:DSK?1500:1500,delay:upd,easing:ez,fill:'both'}).onfinish=function(){this.cancel();dimg.style.opacity='';dimg.classList.add('zoom');if(seal)seal.classList.add('go');$$('.who',duo).forEach((w,i)=>setTimeout(()=>w.classList.add('go'),DSK?80+i*220:300+i*450))};
 }
 
 /* pausa os blobs das secoes fora da tela */
@@ -671,5 +678,6 @@ function startSite(){
   setTops();onScroll();setActive('links');heroIntro();
   
 }
+(function(){const mq=matchMedia('(min-width:1024px)');const sw=()=>{['#duvidas','#contato'].forEach(id=>{const s=$(id);if(!s)return;s.classList.toggle('dark',mq.matches);s.classList.toggle('light',!mq.matches)});const l=$('#contato .clg');if(l)l.src=mq.matches?'assets/logo-white.png':'assets/logo-green.png'};sw();mq.addEventListener&&mq.addEventListener('change',sw)})();
 window.__site={setTops,onScroll,startSite,enterSite};
 })();
