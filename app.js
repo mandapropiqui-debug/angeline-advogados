@@ -435,7 +435,7 @@ const AREAS=[
   $$('.badge').forEach((b,bi)=>{
     const bin=$('.bi',b);let flipped=false,rx=0,ry=0,drag=false,sx=0,sy=0,moved=0,vis=false,counted=false;
     const io4=new IntersectionObserver(es=>{vis=es[0].isIntersecting});io4.observe(b);
-    const apply=(ax,ay)=>{bin.style.transform='rotateX('+ax.toFixed(2)+'deg) rotateY('+(ay+(flipped?180:0)).toFixed(2)+'deg)'};
+    const apply=(ax,ay)=>{b.classList.toggle('flipped',flipped);bin.style.transform='rotateX('+ax.toFixed(2)+'deg) rotateY('+(ay+(flipped?180:0)).toFixed(2)+'deg)'};
     (function sway(now){
       requestAnimationFrame(sway);
       if(!vis||drag||reduce)return;
